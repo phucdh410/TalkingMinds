@@ -42,7 +42,7 @@ const PriceCard = ({ title, price, benefits, index }) => {
 				{benefits?.length > 0 &&
 					benefits.map((item) => (
 						<ContentText
-							key={item.key}
+							key={item.id}
 							variant="body2"
 							className={!item.available && 'NotAvailable'}
 						>
