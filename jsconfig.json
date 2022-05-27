@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./*"],
+			"@/*": ["./*"],
+			"~~/*": ["./*"],
+			"@@/*": ["./*"],
+			"@/common/*": ["common/*"],
+			"@/assets/*": ["common/assets/*"],
+			"@/components/*": ["common/components/*"],
+			"@/styles/*": ["common/styles/*"]
+		}
+	},
+	"exclude": ["node_modules", ".next"]
+}
