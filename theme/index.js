@@ -98,6 +98,29 @@ const theme = createTheme({
 				},
 			},
 		},
+		MuiInputLabel: {
+			styleOverrides: {
+				root: {
+					color: 'unset',
+				},
+			},
+		},
+		MuiFormLabel: {
+			styleOverrides: {
+				asterisk: {
+					color: 'red',
+				},
+			},
+		},
+		MuiAccordion: {
+			styleOverrides: {
+				root: {
+					'&.MuiPaper-root': {
+						boxShadow: 'none',
+					},
+				},
+			},
+		},
 		//#endregion
 	},
 });

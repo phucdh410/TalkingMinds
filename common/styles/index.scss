@@ -39,6 +39,13 @@ body {
 	font-family: 'Open Sans';
 }
 
+textarea {
+	font-family: 'Open Sans';
+	color: #8c8f92;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
 ul {
 	list-style: none;
 	margin: 0;
@@ -59,3 +66,28 @@ img {
 section {
 	padding: 168px 0;
 }
+
+//#region Custom classes
+.py-0 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.pt-0 {
+	padding-top: 0;
+}
+.d-flex {
+	display: flex;
+}
+.d-none {
+	display: none;
+}
+.flex-col {
+	flex-direction: column;
+}
+.h100 {
+	height: 100%;
+}
+.w100 {
+	width: 100%;
+}
+//#endregion

@@ -5,6 +5,7 @@ import {
 	Intro,
 	Offering,
 	Plans,
+	Questions,
 	Rating,
 } from '~/modules/Home';
 
@@ -35,9 +36,11 @@ export default function Home() {
 				<Rating />
 			</section>
 
-			<section>
+			<section className="py-0">
 				<Consultation />
 			</section>
+
+			<Questions />
 		</>
 	);
 }
