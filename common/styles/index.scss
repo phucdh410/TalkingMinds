@@ -75,11 +75,14 @@ section {
 .pt-0 {
 	padding-top: 0;
 }
+.d-none {
+	display: none;
+}
 .d-flex {
 	display: flex;
 }
-.d-none {
-	display: none;
+.al-center {
+	align-items: center;
 }
 .flex-col {
 	flex-direction: column;

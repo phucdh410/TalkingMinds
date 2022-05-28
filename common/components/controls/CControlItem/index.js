@@ -25,7 +25,7 @@ const CControlItem = ({ id, required, label, children, errorText }) => {
 export default CControlItem;
 CControlItem.propTypes = {
 	children: PropTypes.any,
-	id: PropTypes.id,
+	id: PropTypes.any,
 	label: PropTypes.string,
 	required: PropTypes.bool,
 	errorText: PropTypes.string,

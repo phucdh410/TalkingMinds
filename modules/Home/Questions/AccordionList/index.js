@@ -7,7 +7,7 @@ import {
 	Stack,
 	Typography,
 } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { Add, Remove } from '@mui/icons-material';
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
 	'&:before': {
@@ -56,13 +56,19 @@ const AccordionContent = styled(Typography)(() => ({
 	color: '#51565d',
 }));
 
-const AccordionList = ({ list }) => {
+const AccordionList = ({ list, onChange }) => {
 	return (
 		<Stack>
 			{list?.length > 0 &&
 				list.map((item, index) => (
-					<StyledAccordion key={index}>
-						<AccordionSummary expandIcon={<Add />}>
+					<StyledAccordion
+						key={index}
+						onChange={() => onChange(item.id)}
+						expanded={item.isOpen}
+					>
+						<AccordionSummary
+							expandIcon={item.isOpen ? <Remove /> : <Add />}
+						>
 							<AccordionTitle>{item.title}</AccordionTitle>
 						</AccordionSummary>
 						<AccordionDetails>
@@ -77,4 +83,5 @@ const AccordionList = ({ list }) => {
 export default AccordionList;
 AccordionList.propTypes = {
 	list: PropTypes.array,
+	onChange: PropTypes.func,
 };

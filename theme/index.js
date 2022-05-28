@@ -18,6 +18,10 @@ const theme = createTheme({
 			main: '#f7ab1e',
 			contrastText: '#fff',
 		},
+		white: {
+			main: '#fff',
+			contrastText: '#26aba3',
+		},
 	},
 	breakpoints: {
 		values: {

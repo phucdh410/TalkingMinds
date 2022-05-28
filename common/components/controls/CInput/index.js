@@ -24,7 +24,7 @@ const CInput = ({ id, value, onChange, ...props }) => {
 
 export default CInput;
 CInput.propTypes = {
-	id: PropTypes.id,
+	id: PropTypes.any,
 	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	onChange: PropTypes.func,
 };

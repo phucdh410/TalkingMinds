@@ -3,7 +3,9 @@ import { Container, Grid, Box, Typography } from '@mui/material';
 import questionImg from '@/assets/images/Home_question.jpg';
 import Image from 'next/image';
 import AccordionList from './AccordionList';
+import { useEffect, useState } from 'react';
 
+//#region data
 const data = [
 	{
 		id: 1,
@@ -36,8 +38,29 @@ const data = [
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 	},
 ];
+//#endregion
 
 const Questions = () => {
+	const [list, setList] = useState([]);
+
+	useEffect(() => {
+		updateList();
+	}, []);
+
+	const updateList = () => {
+		const newList = data.map((item) => ({ ...item, isOpen: false }));
+		setList(newList);
+	};
+
+	const openAccordion = (id) => {
+		const newList = list.map((item) => {
+			if (item.id === id) item.isOpen = !item.isOpen;
+			else item.isOpen = false;
+			return item;
+		});
+		setList(newList);
+	};
+
 	return (
 		<section>
 			<Container maxWidth="xl" disableGutters>
@@ -74,7 +97,10 @@ const Questions = () => {
 									The most popular questions to discuss mental
 									health
 								</Typography>
-								<AccordionList list={data} />
+								<AccordionList
+									list={list}
+									onChange={openAccordion}
+								/>
 							</Box>
 						</Container>
 					</Grid>
