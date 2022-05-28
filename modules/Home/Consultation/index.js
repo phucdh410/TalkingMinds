@@ -71,6 +71,7 @@ const Consultation = () => {
 									height: 150,
 									width: 658,
 									maxWidth: 658,
+									minHeight: 30,
 								}}
 							/>
 						</CControlItem>
