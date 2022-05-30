@@ -3,9 +3,9 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 
 import { CButton } from '@/components/controls';
 import OfferCard from './OfferCard';
-import service1 from '@/assets/images/service_1.png';
-import service2 from '@/assets/images/service_2.png';
-import service3 from '@/assets/images/service_3.png';
+import service1 from '@/assets/images/program_1.png';
+import service2 from '@/assets/images/program_2.png';
+import service3 from '@/assets/images/program_3.png';
 import { StyledBox, GridContainer } from './components';
 
 //#region Data

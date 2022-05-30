@@ -6,6 +6,7 @@ const Map = ({ srcMap }) => {
 		<MapBox>
 			<GmapCanvas>
 				<iframe
+					loading="lazy"
 					src={srcMap}
 					id="gmap_canvas"
 					title="map"

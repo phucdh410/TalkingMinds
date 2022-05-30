@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { CButton } from '~/common/components/controls';
@@ -14,7 +13,7 @@ const PriceCard = ({ title, price, benefits, index }) => {
 				&#36;{price}
 			</Typography>
 			<StyledDivider />
-			<Box component="ul" m="auto" maxWidth={202}>
+			<Box component="ul" m="auto" maxWidth={202} mb={5}>
 				{benefits?.length > 0 &&
 					benefits.map((item) => (
 						<ContentText
