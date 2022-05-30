@@ -1,36 +1,9 @@
 import React from 'react';
-import {
-	Box,
-	Grid,
-	styled,
-	Typography,
-	Container,
-	Divider,
-} from '@mui/material';
-import img from '@/assets/images/Home_intro.jpg';
-import Image from 'next/image';
+import { Box, Grid, Typography, Container } from '@mui/material';
 import { CButton } from '~/common/components/controls';
-
-const StyledBox = styled(Box)(() => ({
-	display: 'flex',
-	flexDirection: 'column',
-	position: 'relative',
-	height: '100%',
-}));
-const NumberItem = styled(Box)(() => ({
-	display: 'flex',
-	flexDirection: 'column',
-	marginRight: '56px',
-}));
-const StyledDivider = styled(Divider)(({ theme }) => ({
-	width: '44px',
-	maxWidth: '44px',
-	height: '2px',
-	backgroundColor: theme.palette.primary.main,
-	border: 0,
-	margin: '12px 0',
-	opacity: 0.5,
-}));
+import { StyledBox, NumberItem, StyledDivider } from './components';
+import Image from 'next/image';
+import img from '@/assets/images/Home_intro.jpg';
 
 const Intro = () => {
 	return (
@@ -41,11 +14,7 @@ const Intro = () => {
 						<Container sx={{ height: '100%' }}>
 							<StyledBox>
 								<Box mb={2}>
-									<Typography
-										variant="h1"
-										color="secondary"
-										mb={2}
-									>
+									<Typography variant="h1" mb={2}>
 										Private Mental Health Consultation from
 										a Professional
 									</Typography>
@@ -112,12 +81,10 @@ const Intro = () => {
 					</Grid>
 					<Grid item xs={6}>
 						<Container>
-							<div
-								style={{
-									position: 'relative',
-									height: '671px',
-									marginLeft: '30px',
-								}}
+							<Box
+								position="relative"
+								height={671}
+								marginLeft="30px"
 							>
 								<Image
 									priority
@@ -125,7 +92,7 @@ const Intro = () => {
 									alt="image"
 									layout="fill"
 								/>
-							</div>
+							</Box>
 						</Container>
 					</Grid>
 				</Grid>

@@ -1,16 +1,7 @@
 import React from 'react';
-import { styled, Box, Typography, Grid, Container } from '@mui/material';
+import { Box, Typography, Grid, Container } from '@mui/material';
 import PriceCard from './PriceCard';
-
-const StyledBox = styled(Box)(() => ({
-	backgroundColor: 'rgba(244, 252, 250, 1) !important;',
-}));
-
-const GridContainer = styled(Grid)(() => ({
-	'&> .MuiGrid-root:nth-of-type(2)': {
-		transform: 'translateY(-30px)',
-	},
-}));
+import { StyledBox, GridContainer } from './components';
 
 //#region Data
 const data = [
@@ -58,12 +49,7 @@ const Plans = () => {
 		<StyledBox component="section">
 			<Container maxWidth="xl" disableGutters>
 				<Box maxWidth={600} mx="auto" mb={9}>
-					<Typography
-						variant="h2"
-						color="secondary"
-						textAlign="center"
-						mb={2}
-					>
+					<Typography variant="h2" textAlign="center" mb={2}>
 						What I&#39;m Offering
 					</Typography>
 					<Typography variant="body1" textAlign="center">

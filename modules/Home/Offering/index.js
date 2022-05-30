@@ -1,20 +1,12 @@
 import React from 'react';
-import { Box, Container, Grid, styled, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 import { CButton } from '@/components/controls';
 import OfferCard from './OfferCard';
 import service1 from '@/assets/images/service_1.png';
 import service2 from '@/assets/images/service_2.png';
 import service3 from '@/assets/images/service_3.png';
-
-const StyledBox = styled(Box)(() => ({
-	backgroundColor: 'rgba(244, 252, 250, 1) !important;',
-}));
-const GridContainer = styled(Grid)(() => ({
-	'&> .MuiGrid-root:nth-of-type(2)': {
-		transform: 'translateY(-30px)',
-	},
-}));
+import { StyledBox, GridContainer } from './components';
 
 //#region Data
 const data = [
@@ -47,12 +39,7 @@ const Offering = () => {
 		<StyledBox component="section">
 			<Container maxWidth="xl" disableGutters>
 				<Box maxWidth={600} mx="auto" mb={9}>
-					<Typography
-						variant="h2"
-						color="secondary"
-						textAlign="center"
-						mb={2}
-					>
+					<Typography variant="h2" textAlign="center" mb={2}>
 						What I&#39;m Offering
 					</Typography>
 					<Typography variant="body1" textAlign="center">

@@ -1,15 +1,5 @@
-import { Card, styled, Box, Avatar, Typography } from '@mui/material';
-
-const StyledCard = styled(Card)(() => ({
-	borderRadius: '24px',
-	background: '#fff',
-	padding: '56px',
-	margin: '28px 14px',
-	boxShadow: '0px 8px 30px 0px #2baba012',
-}));
-const ContentText = styled(Typography)(() => ({
-	lineHeight: 1.55,
-}));
+import { Box, Avatar, Typography } from '@mui/material';
+import { StyledCard, ContentText } from '../components';
 
 const RatingCard = () => {
 	return (

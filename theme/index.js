@@ -22,6 +22,9 @@ const theme = createTheme({
 			main: '#fff',
 			contrastText: '#26aba3',
 		},
+		background: {
+			default: '#f4fcfa',
+		},
 	},
 	breakpoints: {
 		values: {
@@ -37,16 +40,19 @@ const theme = createTheme({
 		fontSize: 18,
 		fontWeightMedium: 500,
 		h1: {
+			color: '#293039',
 			fontSize: 54,
 			fontWeight: 800,
 			lineHeight: '56px',
 		},
 		h2: {
+			color: '#293039',
 			fontSize: 42,
 			fontWeight: 800,
 			lineHeight: '50px',
 		},
 		h3: {
+			color: '#293039',
 			fontSize: 45,
 			fontWeight: 800,
 			lineHeight: 1,
@@ -55,11 +61,13 @@ const theme = createTheme({
 			},
 		},
 		h4: {
+			color: '#293039',
 			fontSize: 24,
 			fontWeight: 700,
 			lineHeight: '30px',
 		},
 		h6: {
+			color: '#293039',
 			fontSize: '54px',
 			lineHeight: '60px',
 			fontWeight: 800,

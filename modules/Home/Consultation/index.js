@@ -1,23 +1,12 @@
-import { Box, Container, styled, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import {
 	CButton,
 	CControlItem,
 	CInput,
 	CTextarea,
 } from '~/common/components/controls';
+import { FormContainer, InputContainer } from './components';
 
-const FormContainer = styled(Box)(() => ({
-	backgroundColor: '#f4fcfa',
-	borderTopLeftRadius: 150,
-	borderBottomRightRadius: 150,
-	padding: '110px 28px 130px',
-}));
-const InputContainer = styled(Box)(() => ({
-	margin: 'auto',
-	maxWidth: 700,
-	width: 700,
-	fontSize: 16,
-}));
 const styleBtn = {
 	top: '50%',
 	left: '50%',

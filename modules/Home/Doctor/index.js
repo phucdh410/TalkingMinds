@@ -1,54 +1,15 @@
 import React from 'react';
-import {
-	Container,
-	Grid,
-	Typography,
-	Box,
-	styled,
-	IconButton,
-} from '@mui/material';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import { CButton } from '@/components/controls';
 import Image from 'next/image';
 import doctorImg from '@/assets/images/Home_doctor.jpg';
 import { PlayArrow } from '@mui/icons-material';
-
-const StyledBox = styled(Box)(() => ({
-	display: 'flex',
-	flexDirection: 'column',
-	position: 'relative',
-	height: '100%',
-	justifyContent: 'center',
-}));
-const TypographyName = styled(Typography)(() => ({
-	fontSize: '42px',
-	fontWeight: 800,
-	lineHeight: '50px',
-}));
-const TechnicalItem = styled(Typography)(() => ({
-	paddingLeft: '29px',
-	marginBottom: '21px',
-	fontWeight: 700,
-	fontSize: 18,
-	lineHeight: '21px',
-}));
-const PlayButton = styled(IconButton)(({ theme }) => ({
-	position: 'absolute',
-	top: '50%',
-	left: '-75px',
-	transform: 'translateY(-50%)',
-	height: 150,
-	width: 150,
-	padding: 0,
-	color: theme.palette.active.main,
-	backgroundColor: '#fef3de',
-	'&:hover': {
-		color: '#fff',
-		backgroundColor: theme.palette.active.main,
-	},
-	'& svg': {
-		fontSize: 110,
-	},
-}));
+import {
+	StyledBox,
+	TypographyName,
+	TechnicalItem,
+	PlayButton,
+} from './components';
 
 const Doctor = () => {
 	return (
@@ -58,11 +19,7 @@ const Doctor = () => {
 					<Container sx={{ height: '100%' }}>
 						<StyledBox>
 							<Box>
-								<Typography
-									variant="h2"
-									color="secondary"
-									mb={2}
-								>
+								<Typography variant="h2" mb={2}>
 									<TypographyName
 										component="span"
 										color="primary"

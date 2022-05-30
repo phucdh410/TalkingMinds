@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Container, Grid, Box, Typography } from '@mui/material';
-import questionImg from '@/assets/images/Home_question.jpg';
-import Image from 'next/image';
-import AccordionList from './AccordionList';
 import { useEffect, useState } from 'react';
+import { Container, Grid, Box, Typography } from '@mui/material';
+import AccordionList from './AccordionList';
+import Image from 'next/image';
+import questionImg from '@/assets/images/Home_question.jpg';
 
 //#region data
 const data = [
@@ -89,11 +89,7 @@ const Questions = () => {
 								flexDirection="column"
 								justifyContent="center"
 							>
-								<Typography
-									variant="h2"
-									color="secondary"
-									mb={5}
-								>
+								<Typography variant="h2" mb={5}>
 									The most popular questions to discuss mental
 									health
 								</Typography>
