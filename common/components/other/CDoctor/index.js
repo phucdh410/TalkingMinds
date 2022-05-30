@@ -10,7 +10,7 @@ import {
 	PlayButton,
 } from './components';
 
-const Doctor = () => {
+const CDoctor = () => {
 	return (
 		<Container maxWidth="xl" disableGutters sx={{ position: 'relative' }}>
 			<Grid container>
@@ -99,4 +99,4 @@ const Doctor = () => {
 	);
 };
 
-export default Doctor;
+export default CDoctor;
