@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { CSubHeader } from '~/common/components/layout';
 import { CConsultation, CDoctor } from '~/common/components/other';
+import { Experiment } from '~/modules/About';
 
 const About = () => {
 	return (
@@ -19,6 +20,8 @@ const About = () => {
 			<section>
 				<CDoctor />
 			</section>
+
+			<Experiment />
 
 			<section>
 				<CConsultation />
