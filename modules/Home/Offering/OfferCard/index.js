@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRightAlt } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import Image from 'next/image';

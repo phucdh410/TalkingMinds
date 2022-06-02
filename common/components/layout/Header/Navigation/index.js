@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Button, Stack } from '@mui/material';
 import { useRouter } from 'next/router';
 import Link from 'next/link';

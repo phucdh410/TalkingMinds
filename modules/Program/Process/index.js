@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-import { CProcessCard } from '~/common/components/other';
+import { CProgressCard } from '~/common/components/other';
 
 //#region Data
 const data = [
@@ -47,7 +47,7 @@ const Process = () => {
 					{data?.length > 0 &&
 						data.map((item, index) => (
 							<Grid key={item.id} item xl={3}>
-								<CProcessCard
+								<CProgressCard
 									number={index + 1}
 									title={item.title}
 									content={item.content}

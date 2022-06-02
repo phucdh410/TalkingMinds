@@ -1,7 +1,7 @@
 import CProgramCard from './CProgramCard';
-import CProcessCard from './CProcessCard';
+import CProgressCard from './CProgressCard';
 import CPricePlans from './CPricePlans';
 import CDoctor from './CDoctor';
 import CConsultation from './CConsultation';
 
-export { CProgramCard, CProcessCard, CPricePlans, CDoctor, CConsultation };
+export { CProgramCard, CProgressCard, CPricePlans, CDoctor, CConsultation };

@@ -6,10 +6,10 @@ import img2 from '@/assets/images/certificate-2.jpg';
 
 //#region data
 const data = [
-	{ id: 1, img: img1.src },
-	{ id: 2, img: img2.src },
-	{ id: 3, img: img1.src },
-	{ id: 4, img: img2.src },
+	{ id: 1, img: img2.src },
+	{ id: 2, img: img1.src },
+	{ id: 3, img: img2.src },
+	{ id: 4, img: img1.src },
 ];
 //#endregion
 const Certificates = () => {

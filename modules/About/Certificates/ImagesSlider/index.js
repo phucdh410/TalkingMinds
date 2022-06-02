@@ -40,5 +40,5 @@ const ImagesSlider = ({ data }) => {
 
 export default ImagesSlider;
 ImagesSlider.propTypes = {
-	data: PropTypes.func,
+	data: PropTypes.array,
 };

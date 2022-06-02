@@ -1,7 +1,13 @@
 import Head from 'next/head';
 import { CSubHeader } from '~/common/components/layout';
 import { CConsultation, CDoctor } from '~/common/components/other';
-import { Experiment, Certificates } from '~/modules/About';
+import {
+	Experiment,
+	Certificates,
+	Progress,
+	Offering,
+	Photos,
+} from '~/modules/About';
 
 const About = () => {
 	return (
@@ -24,6 +30,12 @@ const About = () => {
 			<Experiment />
 
 			<Certificates />
+
+			<Progress />
+
+			<Offering />
+
+			<Photos />
 
 			<section>
 				<CConsultation />

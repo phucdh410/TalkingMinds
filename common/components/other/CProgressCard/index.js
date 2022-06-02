@@ -2,7 +2,7 @@ import { StyledCard, ContentText, ProgressNumber } from './components';
 import { Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 
-const CProcessCard = ({ number, title, content }) => {
+const CProgressCard = ({ number, title, content }) => {
 	return (
 		<StyledCard>
 			<ProgressNumber>0{number}</ProgressNumber>
@@ -14,9 +14,9 @@ const CProcessCard = ({ number, title, content }) => {
 	);
 };
 
-export default CProcessCard;
+export default CProgressCard;
 
-CProcessCard.propTypes = {
+CProgressCard.propTypes = {
 	number: PropTypes.number,
 	title: PropTypes.string,
 	content: PropTypes.string,

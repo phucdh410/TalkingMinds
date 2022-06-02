@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Container, Grid } from '@mui/material';
 import { HeaderMui } from './components';
 import Contact from './Contact';
