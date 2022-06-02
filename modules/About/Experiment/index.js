@@ -1,11 +1,12 @@
 import { Box, Typography } from '@mui/material';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CButton } from '~/common/components/controls';
 import img1 from '@/assets/images/test.jpg';
 import img2 from '@/assets/images/test2.jpg';
 import img3 from '@/assets/images/test3.jpg';
 import img4 from '@/assets/images/test4.jpg';
 import img5 from '@/assets/images/test5.jpg';
+import { motion, useViewportScroll } from 'framer-motion';
 
 const style = {
 	'::-webkit-scrollbar': {
@@ -30,25 +31,48 @@ const style = {
 
 const Experiment = () => {
 	const boxRef = useRef();
+	const [radius, setRadius] = useState(0);
 
 	const handleScroll = (e) => {
-		e.preventDefault();
-		e.stopPropagation();
+		console.log(boxRef.current.getBoundingClientRect().top);
 
-		if (e.deltaY > 0) {
-			console.log('Scroll xuống');
-			boxRef.current.scrollLeft += 30;
+		if (boxRef.current.getBoundingClientRect().top <= 0) {
+			if (
+				boxRef.current.offsetWidth + boxRef.current.scrollLeft >=
+				boxRef.current.scrollWidth
+			)
+				return;
+			console.log('start prevent');
+			e.preventDefault();
+			e.stopPropagation();
+
+			if (e.deltaY > 0) {
+				console.log('Scroll xuống');
+				if (radius >= 500) boxRef.current.scrollLeft += 70;
+				else setRadius((prev) => (prev += 5));
+			}
+			if (e.deltaY < 0) {
+				console.log('Scroll lên');
+				if (boxRef.current.scrollLeft <= 0)
+					setRadius((prev) => {
+						if (prev - 30 < 0) return 0;
+						else return (prev -= 30);
+					});
+				else {
+					if (boxRef.current.scrollLeft - 70 < 0)
+						boxRef.current.scrollLeft = 0;
+					else boxRef.current.scrollLeft -= 70;
+				}
+			}
+			return false;
 		}
-		if (e.deltaY < 0) {
-			console.log('Scroll lên');
-			boxRef.current.scrollLeft -= 30;
-		}
-		return false;
 	};
 
 	useEffect(() => {
 		document.getElementById('box').addEventListener('wheel', handleScroll);
 	});
+
+	const { scrollYProgress } = useViewportScroll();
 
 	return (
 		<>
@@ -56,17 +80,39 @@ const Experiment = () => {
 				id="box"
 				display="flex"
 				sx={{
-					paddingTop: '100px',
 					minHeight: 300,
 					bgcolor: '#def9f7',
 					overflowX: 'scroll',
 					transition: '100ms linear',
-					borderTop: '1px solid black',
+					height: '70vh',
 					...style,
 				}}
 				ref={boxRef}
 			>
-				<Box style={{ minWidth: '70vw' }}>
+				<Box>
+					<Box
+						height="100%"
+						width="100%"
+						style={{ backgroundColor: 'white' }}
+					>
+						<motion.path style={{ pathLength: scrollYProgress }}>
+							<Box
+								className="circle"
+								height="200px"
+								width="200px"
+								borderRadius="50%"
+								marginLeft="50vw"
+								marginRight="50vw"
+								sx={{
+									backgroundColor: 'red',
+									boxShadow: `0 0 0 ${radius}px #def9f7`,
+								}}
+							></Box>
+						</motion.path>
+					</Box>
+				</Box>
+
+				<Box style={{ minWidth: '70vw', paddingTop: '100px' }}>
 					<Box width={700} ml={20} display="flex">
 						<Box width={400}>
 							<Typography
@@ -77,7 +123,7 @@ const Experiment = () => {
 							>
 								Bột Ngọt
 							</Typography>
-							<Typography fontSize={24} mb={3} mb={3}>
+							<Typography fontSize={24} mb={3}>
 								Không chỉ giúp món ăn ngon hơn và có chức năng
 								sinh lý đối với cơ thể người, bột ngọt còn giúp
 								giảm muối ăn vào mà vẫn ngon miệng
@@ -89,7 +135,7 @@ const Experiment = () => {
 						</Box>
 					</Box>
 				</Box>
-				<Box style={{ minWidth: '70vw' }}>
+				<Box style={{ minWidth: '70vw', paddingTop: '100px' }}>
 					<Box width={700} ml={20} display="flex">
 						<Box width={400}>
 							<Typography
@@ -112,7 +158,7 @@ const Experiment = () => {
 						</Box>
 					</Box>
 				</Box>
-				<Box style={{ minWidth: '70vw' }}>
+				<Box style={{ minWidth: '70vw', paddingTop: '100px' }}>
 					<Box width={700} ml={20} display="flex">
 						<Box width={400}>
 							<Typography
@@ -135,7 +181,7 @@ const Experiment = () => {
 						</Box>
 					</Box>
 				</Box>
-				<Box style={{ minWidth: '70vw' }}>
+				<Box style={{ minWidth: '70vw', paddingTop: '100px' }}>
 					<Box width={700} ml={20} display="flex">
 						<Box width={400}>
 							<Typography
@@ -158,7 +204,7 @@ const Experiment = () => {
 						</Box>
 					</Box>
 				</Box>
-				<Box style={{ minWidth: '70vw' }}>
+				<Box style={{ minWidth: '70vw', paddingTop: '100px' }}>
 					<Box width={700} ml={20} display="flex">
 						<Box width={400}>
 							<Typography
@@ -182,7 +228,7 @@ const Experiment = () => {
 					</Box>
 				</Box>
 			</Box>
-			<Box height={50} bgcolor="#def9f7">
+			<Box height={50}>
 				<Typography textAlign="center">
 					Cuộn chuột để khám phá
 				</Typography>
