@@ -6,7 +6,9 @@ const Navigation = () => {
 	const router = useRouter();
 
 	const handleActive = (route) => {
-		if (router.pathname.includes(route)) {
+		console.log(router.pathname);
+		if (router.pathname === '/' && route === '') return true;
+		else if (router.pathname.includes(route) && route !== '') {
 			return true;
 		}
 		return false;
