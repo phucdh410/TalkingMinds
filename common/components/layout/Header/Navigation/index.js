@@ -5,15 +5,15 @@ import { CSubMenu } from '~/common/components/controls';
 
 //#region data
 const menuList = [
-	{ id: 1, title: 'Landing page' },
-	{ id: 2, title: 'Call to action' },
-	{ id: 3, title: 'Service' },
-	{ id: 4, title: 'Pricing' },
-	{ id: 5, title: 'Gallery' },
-	{ id: 6, title: 'Team' },
-	{ id: 7, title: 'Blog single' },
-	{ id: 8, title: 'Blog index' },
-	{ id: 9, title: 'System page' },
+	{ id: 1, title: 'Landing page', link: '/test' },
+	{ id: 2, title: 'Call to action', link: '#' },
+	{ id: 3, title: 'Service', link: '#' },
+	{ id: 4, title: 'Pricing', link: '#' },
+	{ id: 5, title: 'Gallery', link: '#' },
+	{ id: 6, title: 'Team', link: '#' },
+	{ id: 7, title: 'Blog single', link: '#' },
+	{ id: 8, title: 'Blog index', link: '#' },
+	{ id: 9, title: 'System page', link: '#' },
 ];
 //#endregion
 

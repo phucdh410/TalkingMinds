@@ -1,6 +1,7 @@
 import { Button, Menu, MenuItem, styled } from '@mui/material';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 const StyledMenu = styled(Menu)(() => ({
 	'& .MuiList-root': {
@@ -34,7 +35,9 @@ const CSubMenu = ({ menuList, ...props }) => {
 				{menuList?.length > 0 &&
 					menuList.map((mItem, index) => (
 						<MenuItem key={index} onClick={handleClose}>
-							{mItem.title}
+							<Link href={mItem.link} passHref>
+								{mItem.title}
+							</Link>
 						</MenuItem>
 					))}
 			</StyledMenu>
