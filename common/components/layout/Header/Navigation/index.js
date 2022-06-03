@@ -1,12 +1,26 @@
 import { Box, Button, Stack } from '@mui/material';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { CSubMenu } from '~/common/components/controls';
+
+//#region data
+const menuList = [
+	{ id: 1, title: 'Landing page' },
+	{ id: 2, title: 'Call to action' },
+	{ id: 3, title: 'Service' },
+	{ id: 4, title: 'Pricing' },
+	{ id: 5, title: 'Gallery' },
+	{ id: 6, title: 'Team' },
+	{ id: 7, title: 'Blog single' },
+	{ id: 8, title: 'Blog index' },
+	{ id: 9, title: 'System page' },
+];
+//#endregion
 
 const Navigation = () => {
 	const router = useRouter();
 
 	const handleActive = (route) => {
-		console.log(router.pathname);
 		if (router.pathname === '/' && route === '') return true;
 		else if (router.pathname.includes(route) && route !== '') {
 			return true;
@@ -26,14 +40,12 @@ const Navigation = () => {
 					</Button>
 				</Link>
 
-				<Link href="/pages" passHref>
-					<Button
-						sx={{ padding: '14px 40px' }}
-						color={handleActive('pages') ? 'active' : 'secondary'}
-					>
-						Pages
-					</Button>
-				</Link>
+				<CSubMenu
+					menuList={menuList}
+					sx={{ padding: '14px 40px' }}
+					color={handleActive('pages') ? 'active' : 'secondary'}
+				/>
+
 				<Link href="/about" passHref>
 					<Button
 						sx={{ padding: '14px 40px' }}

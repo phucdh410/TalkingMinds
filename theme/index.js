@@ -133,6 +133,13 @@ const theme = createTheme({
 				},
 			},
 		},
+		MuiPaper: {
+			styleOverrides: {
+				root: {
+					boxShadow: '0px 8px 30px 0px #2baba012',
+				},
+			},
+		},
 		//#endregion
 	},
 });
