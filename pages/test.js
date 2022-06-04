@@ -16,34 +16,64 @@ const Test = () => {
 	const [radius, setRadius] = useState(1);
 
 	const handleScroll = (e) => {
+		const MAX =
+			scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
 		if (e.deltaY > 0) {
-			console.log('Scroll xuống');
+			if (boxRef.current.getBoundingClientRect().top <= 0) {
+				if (!boxRef.current.className.includes('pin'))
+					boxRef.current.classList.add('pin');
+
+				if (boxRef.current.className.includes('pin')) {
+					if (
+						!(
+							scrollRef.current.scrollLeft +
+								scrollRef.current.clientWidth ===
+							scrollRef.current.scrollWidth
+						)
+					) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (radius >= 800) {
+							scrollRef.current.scrollLeft += 40;
+							if (scrollRef.current.scrollLeft > MAX)
+								scrollRef.current.scrollLeft = MAX;
+						} else {
+							setRadius((prev) => {
+								if (++prev > 800) return 800;
+								else return ++prev;
+							});
+						}
+					} else {
+						boxRef.current.classList.remove('pin');
+					}
+				}
+			}
 		}
 		if (e.deltaY < 0) {
-			console.log('Scroll lên');
-		}
-		if (boxRef.current.getBoundingClientRect().top <= 0) {
-			if (!boxRef.current.className.includes('pin'))
-				boxRef.current.classList.add('pin');
+			if (boxRef.current.getBoundingClientRect().top >= 112) {
+				if (!boxRef.current.className.includes('pin'))
+					boxRef.current.classList.add('pin');
 
-			if (boxRef.current.className.includes('pin')) {
-				if (
-					!(
-						scrollRef.current.scrollLeft +
-							scrollRef.current.clientWidth ===
-						scrollRef.current.scrollWidth
-					)
-				) {
-					e.preventDefault();
-					e.stopPropagation();
-					scrollRef.current.scrollLeft += 40;
-				} else {
-					boxRef.current.classList.remove('pin');
+				if (boxRef.current.className.includes('pin')) {
+					if (scrollRef.current.scrollLeft !== 0) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (radius >= 700) {
+							scrollRef.current.scrollLeft -= 40;
+							if (scrollRef.current.scrollLeft < 0)
+								scrollRef.current.scrollLeft = 0;
+						} else {
+							setRadius((prev) => --prev);
+						}
+					} else {
+						// boxRef.current.classList.remove('pin');
+					}
 				}
 			}
 		}
 	};
 
+	console.log(radius);
 	useEffect(() => {
 		window.addEventListener('wheel', handleScroll, { passive: false });
 	});
@@ -84,7 +114,7 @@ const Test = () => {
 
 					<Box
 						height="100%"
-						minWidth={3000}
+						minWidth={7000}
 						sx={{ backgroundColor: 'cyan' }}
 					>
 						a
