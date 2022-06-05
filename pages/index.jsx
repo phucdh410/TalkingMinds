@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { CDoctor } from '~/common/components/other';
 import {
 	Consultation,
 	Doctor,
@@ -27,7 +28,7 @@ export default function Home() {
 			<Offering />
 
 			<section>
-				<Doctor />
+				<CDoctor />
 			</section>
 
 			<Plans />

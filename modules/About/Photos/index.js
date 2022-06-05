@@ -8,6 +8,7 @@ import img5 from '@/assets/images/photo5.webp';
 import img6 from '@/assets/images/photo6.webp';
 import Image from 'next/image';
 import { PhotoCameraBack } from '@mui/icons-material';
+import BigPicture from 'bigpicture';
 
 //#region data
 const _data = [
@@ -48,8 +49,13 @@ const Photos = () => {
 		setData(newData);
 	};
 
-	const handleZoomImg = (id) => {
-		console.log(`Đã click vào ảnh id:${id}`);
+	const handleZoomImg = (e, id) => {
+		var bp = BigPicture({
+			el: e.target,
+			gallery: '#images-gallery',
+			loop: true,
+			position: id,
+		});
 	};
 
 	return (
@@ -64,15 +70,16 @@ const Photos = () => {
 						typesetting industry
 					</Typography>
 				</Box>
-				<Grid container spacing={4}>
+				<Grid container spacing={4} id="images-gallery">
 					{data?.length > 0 &&
-						data.map((item) => (
+						data.map((item, index) => (
 							<Grid key={item.id} item xl={4}>
 								<Box height={286} position="relative">
 									<Image
 										layout="fill"
 										src={item.img}
 										alt="image"
+										data-bp={item.img}
 									/>
 									<Box
 										className="overlay"
@@ -90,7 +97,7 @@ const Photos = () => {
 										onMouseLeave={() =>
 											handleLeave(item.id)
 										}
-										onClick={() => handleZoomImg(item.id)}
+										onClick={(e) => handleZoomImg(e, index)}
 									>
 										<PhotoCameraBack
 											color="white"

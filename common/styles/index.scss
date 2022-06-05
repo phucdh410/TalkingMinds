@@ -103,3 +103,10 @@ section {
 	width: 100%;
 }
 //#endregion
+
+//#region style for bigpicture gallery
+#bp_container img {
+	max-width: 50% !important;
+	max-height: 70% !important;
+}
+//#endregion

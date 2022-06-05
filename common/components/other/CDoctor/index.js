@@ -1,8 +1,10 @@
-import { Container, Grid, Typography, Box } from '@mui/material';
+import { useRef } from 'react';
 import { CButton } from '@/components/controls';
-import Image from 'next/image';
-import doctorImg from '@/assets/images/Home_doctor.jpg';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import { PlayArrow } from '@mui/icons-material';
+import BigPicture from 'bigpicture';
+import doctorImg from '@/assets/images/Home_doctor.jpg';
+import Image from 'next/image';
 import {
 	StyledBox,
 	TypographyName,
@@ -11,6 +13,17 @@ import {
 } from './components';
 
 const CDoctor = () => {
+	const linkRef = useRef();
+
+	const openVideo = (e) => {
+		e.preventDefault();
+		var bp = BigPicture({
+			el: linkRef.current,
+			iframeSrc: 'https://www.youtube.com/embed/TKlXc3iywoM',
+			dimensions: [900, 500],
+		});
+	};
+
 	return (
 		<Container maxWidth="xl" disableGutters sx={{ position: 'relative' }}>
 			<Grid container>
@@ -86,8 +99,8 @@ const CDoctor = () => {
 							/>
 							<PlayButton
 								component="a"
-								href="https://www.youtube.com/watch?v=Qzc_aX8c8g4"
-								onClick={(e) => e.preventDefault()}
+								onClick={openVideo}
+								ref={linkRef}
 							>
 								<PlayArrow />
 							</PlayButton>
