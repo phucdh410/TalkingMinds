@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { CDoctor } from '~/common/components/other';
 import {
 	Consultation,
-	Doctor,
 	Intro,
 	Offering,
 	Plans,

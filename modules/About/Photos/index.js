@@ -50,6 +50,7 @@ const Photos = () => {
 	};
 
 	const handleZoomImg = (e, id) => {
+		// eslint-disable-next-line no-unused-vars
 		var bp = BigPicture({
 			el: e.target,
 			gallery: '#images-gallery',

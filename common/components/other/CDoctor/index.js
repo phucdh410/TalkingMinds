@@ -17,6 +17,7 @@ const CDoctor = () => {
 
 	const openVideo = (e) => {
 		e.preventDefault();
+		// eslint-disable-next-line no-unused-vars
 		var bp = BigPicture({
 			el: linkRef.current,
 			iframeSrc: 'https://www.youtube.com/embed/TKlXc3iywoM',
